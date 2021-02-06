@@ -65,7 +65,7 @@ The basic usage of the `setWatcher()` method is to pass an array, with the "trig
         ]);
 ```
 
-You will notice that the key is the "watched" trigger. Then you define an 'action' which is an anonymous function. 
+You will notice that the key is the "watched" trigger. If the 'invoice_start_num_changed' is present (and not falsey) the defined 'action,' which is an anonymous function, will be called. 
 
 You can optionally choose to remove the trigger from the request (e.g. if you are passing the request elsewhere and want to sanitize it) by passing a 'removeKey' attribute, like this:
 
