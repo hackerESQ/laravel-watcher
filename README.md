@@ -26,7 +26,7 @@ namespace App\Http\Requests;
 use hackerESQ\Watcher\Watcher;
 use Illuminate\Foundation\Http\FormRequest;
 
-class SettingsRequest extends FormRequest
+class YourCustomFormRequest extends FormRequest
 {
     use Watcher;
     
