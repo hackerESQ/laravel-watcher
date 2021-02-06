@@ -97,6 +97,8 @@ Finally, you will notice you can pass `$context` to the anonymous function. This
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+use hackerESQ\Watcher\Requests\WatcherRequest;
 
 class SettingsController extends Controller
 {
