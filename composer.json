@@ -1,0 +1,24 @@
+{
+    "name": "hackeresq/laravel-watcher",
+    "description": "Watch for specific keys in your Laravel form requests and perform specific functions",
+    "keywords": [
+        "watch",
+        "keys",
+        "laravel"
+    ],
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "hackerESQ\\Watcher\\": "src/"
+        }
+    },
+    "require": {
+        "php" : ">=7.0",
+        "laravel/framework": "^6.0|^7.0|^8.0",
+        "doctrine/dbal": "^2.8"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.8.*"
+    }
+}
