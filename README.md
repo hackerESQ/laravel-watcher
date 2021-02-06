@@ -3,16 +3,6 @@ Set a watcher to watch for specific keys in your Laravel form requests. If those
 
 * [Installation](#installation)
 * [Usage](#usage)
-  * [Set new setting](#set-new-setting)
-  * [Get all settings](#get-all-settings)
-  * [Get single setting](#get-single-setting)
-  * [Get certain setting (via array)](#get-certain-settings)
-  * [Check if a setting is set](#check-if-a-setting-is-set)
-* [Encryption](#encryption)
-* [Multi-tenancy](#multi-tenancy)
-* [Disable cache](#disable-cache)
-* [Hidden settings](#hidden-settings)
-* [Customize table name](#customize-table-name)
   
   
 ## Installation
