@@ -87,6 +87,23 @@ You can optionally choose to remove the trigger from the request (e.g. if you ar
 
 Finally, you will notice you can pass `$context` to the anonymous function. This `$context` object contains the trigger name (in the `$context->trigger` object) and the original form request (in the `$context->request` object). 
 
+### Call multiple functions
+
+If you do not want to create and call an intermediary function, and would prefer to call multiple functions from within the watcher, you can opt to use a standard anonymous function (rather than the short arrow function), like this:
+
+```php
+        $request->setWatcher([
+            'invoice_start_num_changed' => [
+                'action' => function($context) { 
+                      Log::info($context); 
+                      DB::statement("ALTER TABLE `invoices` AUTO_INCREMENT = ".(int)$context->request->invoice_start_num);
+                      // do other stuff
+                 },
+                'removeKey' => true,
+            ],
+        ]);
+```
+
 ## Complete Example
 
 ### SettingsController.php
@@ -118,7 +135,7 @@ class SettingsController extends Controller
                 'removeKey' => true,
             ],
             'should_log_action' => [
-                'action' => fn($context) => Log::info($context);,
+                'action' => fn($context) => Log::info($context),
             ],
         ]);
 
