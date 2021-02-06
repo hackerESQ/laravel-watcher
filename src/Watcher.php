@@ -1,6 +1,6 @@
 <?php
 
-namespace hackerESQ\Watcher\Traits;
+namespace hackerESQ\Watcher;
 
 /**
  * INSTALL:
