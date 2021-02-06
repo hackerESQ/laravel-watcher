@@ -15,7 +15,7 @@ You can install the package via composer:
 composer require hackeresq/laravel-watcher
 ```
 
-Watcher is a trait that can be added to your Laravel FormRequests (or you can use the provided base [FormRequest](https://github.com/hackerESQ/laravel-watcher/blob/master/src/Requests/WatcherRequest.php)). To start using the `setWatcher()` method, you must 'use' the Watcher trait by either adding it to your FormRequest or using the base WatcherRequest in your controllers.
+Watcher is a trait that can be added to your Laravel FormRequests (or you can use the included base FormRequest). To start using the `setWatcher()` method, you must 'use' the Watcher trait by either adding it to your FormRequest or using the base [WatcherRequest](https://github.com/hackerESQ/laravel-watcher/blob/master/src/Requests/WatcherRequest.php) in your controllers.
 
 An example of a custom FormRequest implementation:
 
