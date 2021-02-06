@@ -85,7 +85,7 @@ You can optionally choose to remove the trigger from the request (e.g. if you ar
 
 ### Passing Context
 
-Finally, you will notice you can pass `$context` to the anonymous function. This `$context` object contains the trigger name and the original request. 
+Finally, you will notice you can pass `$context` to the anonymous function. This `$context` object contains the trigger name (in the `$context->trigger` object) and the original form request (in the `$context->request` object). 
 
 ## Complete Example
 
