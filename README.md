@@ -87,7 +87,7 @@ You can optionally choose to remove the trigger from the request (e.g. if you ar
 
 Finally, you will notice you can pass `$context` to the anonymous function. This `$context` object contains the trigger name and the original request. 
 
-## Complete Examplee
+## Complete Example
 
 ### SettingsController.php
 
