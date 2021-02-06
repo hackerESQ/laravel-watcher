@@ -30,28 +30,7 @@ class YourCustomFormRequest extends FormRequest
 {
     use Watcher;
     
-    /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
-     */
-    public function authorize()
-    {
-        return true;
-    }
-
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array
-     */
-    public function rules()
-    {
-        return [
-            // some rules
-            'name' => ['sometimes', 'required', 'string'],
-        ];
-    }
+    // ...
 }
 ```
 
@@ -66,7 +45,7 @@ Alternatively, if you are not using custom FormRequests, you can use the provide
      */
     public function update(WatcherRequest $request)
     {   
-        //...
+        // ...
     }
 ```
 
