@@ -3,6 +3,7 @@ Set a watcher to watch for specific keys in your Laravel form requests. If those
 
 * [Installation](#installation)
 * [Usage](#usage)
+* [Complete Example](#complete-example)
   
   
 ## Installation
@@ -55,6 +56,8 @@ Alternatively, if you are not using custom FormRequests, you can use the provide
 
 Once you've added the trait to your custom FormRequest or you've added the WatcherRequest to your controller method, you'll have a new `setWatcher()` method available on your requests. This allows you to set up your watcher.
 
+### Basic Usage
+
 The basic usage of the `setWatcher()` method is to pass an array, with the "trigger" as the key, like so:
 
 ```php
@@ -67,6 +70,8 @@ The basic usage of the `setWatcher()` method is to pass an array, with the "trig
 
 You will notice that the key is the "watched" trigger. If the 'invoice_start_num_changed' is present (and not falsey) the defined 'action,' which is an anonymous function, will be called. 
 
+### Remove Key
+
 You can optionally choose to remove the trigger from the request (e.g. if you are passing the request elsewhere and want to sanitize it) by passing a 'removeKey' attribute, like this:
 
 ```php
@@ -76,6 +81,50 @@ You can optionally choose to remove the trigger from the request (e.g. if you ar
                 'removeKey' => true,
             ],
         ]);
+```
+
+### Passing Context
+
+Finally, you will notice you can pass `$context` to the anonymous function. This `$context` variable contains the trigger name and the original request object. 
+
+## Complete Examplee
+
+### SettingsController.php
+
+```php
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Support\Facades\DB;
+
+class SettingsController extends Controller
+{
+    // ... other controller methods
+    
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \hackerESQ\Watcher\Requests\WatcherRequest $request
+     * @return \Illuminate\Http\Response
+     */
+    public function update(WatcherRequest $request)
+    {   
+        $request->setWatcher([
+            'invoice_start_num_changed' => [
+                'action' => fn($context) => DB::statement("ALTER TABLE `invoices` AUTO_INCREMENT = ".(int)$context->request->invoice_start_num),
+                'removeKey' => true,
+            ],
+            'should_log_action' => [
+                'action' => fn($context) => Log::info($context);,
+            ],
+        ]);
+
+        Settings::set($request->all());
+
+        return $request;
+    }
+}
 ```
 
 ## Finally
