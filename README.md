@@ -1,4 +1,9 @@
 # laravel-watcher
+
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/hackerESQ/laravel-watcher.svg?style=flat-square)](https://packagist.org/packages/hackerESQ/laravel-watcher)
+[![Total Downloads](https://img.shields.io/packagist/dt/hackerESQ/laravel-watcher.svg?style=flat-square)](https://packagist.org/packages/hackerESQ/laravel-watcher)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
+
 Set a watcher to watch for specific keys in your Laravel form requests. If those keys are present, perform any arbitrary functions(s).
 
 * [Installation](#installation)
