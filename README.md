@@ -153,6 +153,9 @@ class SettingsController extends Controller
 
 ## Finally
 
+### Testing
+You can run tests with the `composer test` command.
+
 ### Contributing
 Feel free to create a fork and submit a pull request if you would like to contribute.
 
