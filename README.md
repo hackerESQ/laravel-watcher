@@ -24,7 +24,7 @@ An example of a custom FormRequest implementation:
 
 namespace App\Http\Requests;
 
-use hackerESQ\Watcher\Watcher;
+use HackerESQ\Watcher\Watcher;
 use Illuminate\Foundation\Http\FormRequest;
 
 class YourCustomFormRequest extends FormRequest
@@ -41,7 +41,7 @@ Alternatively, if you are not using custom FormRequests, you can use the provide
     /**
      * Update the specified resource in storage.
      *
-     * @param  hackerESQ\Watcher\Requests\WatcherRequest $request
+     * @param  HackerESQ\Watcher\Requests\WatcherRequest $request
      * @return \Illuminate\Http\Response
      */
     public function update(WatcherRequest $request)
@@ -115,7 +115,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
-use hackerESQ\Watcher\Requests\WatcherRequest;
+use HackerESQ\Watcher\Requests\WatcherRequest;
 
 class SettingsController extends Controller
 {
@@ -124,7 +124,7 @@ class SettingsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \hackerESQ\Watcher\Requests\WatcherRequest $request
+     * @param  \HackerESQ\Watcher\Requests\WatcherRequest $request
      * @return \Illuminate\Http\Response
      */
     public function update(WatcherRequest $request)

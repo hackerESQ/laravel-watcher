@@ -1,8 +1,8 @@
 <?php
 
-namespace hackerESQ\Watcher\Requests;
+namespace HackerESQ\Watcher\Requests;
 
-use hackerESQ\Watcher\Watcher;
+use HackerESQ\Watcher\Watcher;
 use Illuminate\Foundation\Http\FormRequest;
 
 class WatcherRequest extends FormRequest
