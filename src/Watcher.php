@@ -48,7 +48,7 @@ trait Watcher
             // does this trigger exist in the request?
             if ( $this->has($trigger) && !empty($this->{$trigger}) ) {
                 // run action and provide context to function as an object
-                $meta['action']((object)[
+                if (isset($meta['action'])) $meta['action']((object)[
                     'request' => $this,
                     'trigger' => $trigger
                 ]);
@@ -60,4 +60,5 @@ trait Watcher
         // are there any keys to remove? if so, do it...
         if ($this->keys_to_remove) $this->replace($this->except($this->keys_to_remove));
     }
+
 }
