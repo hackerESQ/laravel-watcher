@@ -46,7 +46,7 @@ trait Watcher
         // loop through triggers
         foreach($this->triggers as $trigger => $meta) {
             // does this trigger exist in the request?
-            if ( $this->has($trigger) && (isset($meta['allowEmpty'] && $meta['allowEmpty']) || !empty($this->{$trigger}) )) {
+            if ( $this->has($trigger) && (isset($meta['allowEmpty']) && $meta['allowEmpty']) || !empty($this->{$trigger}) ) {
                 // run action and provide context to function as an object
                 if (isset($meta['action'])) $meta['action']((object)[
                     'request' => $this,
