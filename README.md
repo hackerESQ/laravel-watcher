@@ -90,7 +90,20 @@ You can optionally choose to remove the trigger from the request (e.g. if you ar
 
 ### Passing Context
 
-Finally, you will notice you can pass `$context` to the anonymous function. This `$context` object contains the trigger name (in the `$context->trigger` object) and the original form request (in the `$context->request` object). 
+You will notice you can pass `$context` to the anonymous function. This `$context` object contains the trigger name (in the `$context->trigger` object) and the original form request (in the `$context->request` object). 
+
+### Trigger even when request is empty
+
+Finally, if you want the action to fire even when the trigger is `null` or empty, you can use the `allowEmpty` option. Just set `allowEmpty` to `true` when you configure your triggers:
+
+```php
+        $request->setWatcher([
+            'empty_field_contains_nothing' => [
+                'action' => fn($context) => Log::info($context),
+                'allowEmpty' => true,
+            ],
+        ]);
+```
 
 ### Call multiple functions
 
